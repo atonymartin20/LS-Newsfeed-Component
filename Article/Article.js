@@ -90,7 +90,7 @@ const data = [
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
-  <div class="article">
+<div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
@@ -98,17 +98,58 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  */
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+class ArticleConstructor {
+    constructor(story) {
+        this.story = story;
+        this.ArticleContainer = document.querySelector('.articles');
+        this.createArticles();
+    }
 
-  Step 3: return the entire component.
+    createArticles () {
+        this.story.map(article => {
+            this.article = document.createElement('div');
+            this.article.classList.add('article');
+            this.title = document.createElement('h2');
+            this.title.textContent = article.title;
+            this.date = document.createElement('p');
+            this.date.classList.add('date');
+            this.date.textContent = article.date;
+            this.firstP = document.createElement('p');
+            this.firstP.classList.add('firstParagraph');
+            this.firstP.textContent = article.firstParagraph;
+            this.secondP = document.createElement('p');
+            this.secondP.classList.add('secondParagraph');
+            this.secondP.textContent = article.secondParagraph;
+            this.thirdP = document.createElement('p');
+            this.thirdP.classList.add('thirdParagraph');
+            this.thirdP.textContent = article.thirdParagraph;
+            this.spanButton = document.createElement('button');
+            this.spanButton.classList.add('expandButton');
+            this.spanButton.textContent = ('Expand Me');
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+            this.ArticleContainer.appendChild(this.article);
+            this.article.appendChild(this.title);
+            this.article.appendChild(this.date);
+            this.article.appendChild(this.firstP);
+            this.article.appendChild(this.secondP);
+            this.article.appendChild(this.thirdP);
+            this.article.appendChild(this.spanButton);
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+        })
+    }
+}
 
-*/
+
+
+// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+// Step 3: return the entire component.
+
+// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
