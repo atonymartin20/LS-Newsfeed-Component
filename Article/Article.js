@@ -109,26 +109,26 @@ class ArticleConstructor {
         this.ArticleContainer = document.querySelector('.articles');
         this.createArticles();
     }
-
+    
     createArticles () {
         this.story.map(article => {
             this.article = document.createElement('div');
             this.article.classList.add('article');
             this.title = document.createElement('h2');
-            this.title.textContent = article.title;
             this.date = document.createElement('p');
+            this.firstP = document.createElement('p');
+            this.secondP = document.createElement('p');
+            this.thirdP = document.createElement('p');
+            this.spanButton = document.createElement('button');
+            this.title.textContent = article.title;
             this.date.classList.add('date');
             this.date.textContent = article.date;
-            this.firstP = document.createElement('p');
             this.firstP.classList.add('firstParagraph');
             this.firstP.textContent = article.firstParagraph;
-            this.secondP = document.createElement('p');
             this.secondP.classList.add('secondParagraph');
             this.secondP.textContent = article.secondParagraph;
-            this.thirdP = document.createElement('p');
             this.thirdP.classList.add('thirdParagraph');
             this.thirdP.textContent = article.thirdParagraph;
-            this.spanButton = document.createElement('button');
             this.spanButton.classList.add('expandButton');
             this.spanButton.textContent = ('Expand Me');
 
@@ -150,6 +150,7 @@ class ArticleConstructor {
 
 // Step 3: return the entire component.
 
-// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+// Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+const allArticles = new ArticleConstructor(data);
