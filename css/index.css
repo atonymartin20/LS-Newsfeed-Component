@@ -74,7 +74,8 @@
   background-color: white;
 }
 .article-open {
-  height: 400px;
+  min-height: 250px;
+  height: 100%;
 }
 .menu-button {
   position: absolute;

@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+      title: 'New Data Point ',
+      date: 'Aug 6th, 2019',
+      firstParagraph: `This is the first paragraph.`,
+      secondParagraph: `Who gave me this power?`,
+      thirdParagraph: `PPPPPPPOOOOOOOOOOOOOOOOOOWWWWWWWWWWWWWWEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRR ... damn you He-Man`
   }
 ];
 
@@ -119,7 +126,7 @@ class ArticleConstructor {
             this.firstP = document.createElement('p');
             this.secondP = document.createElement('p');
             this.thirdP = document.createElement('p');
-            this.spanButton = document.createElement('button');
+            this.spanButton = document.createElement('span');
             this.title.textContent = article.title;
             this.date.classList.add('date');
             this.date.textContent = article.date;
@@ -132,6 +139,8 @@ class ArticleConstructor {
             this.spanButton.classList.add('expandButton');
             this.spanButton.textContent = ('Expand Me');
 
+            this.spanButton.addEventListener('click', this.expandArticle);
+
             this.ArticleContainer.appendChild(this.article);
             this.article.appendChild(this.title);
             this.article.appendChild(this.date);
@@ -141,6 +150,10 @@ class ArticleConstructor {
             this.article.appendChild(this.spanButton);
 
         })
+    }
+
+    expandArticle(event) {
+        event.target.parentNode.classList.toggle('article-open')
     }
 }
 
