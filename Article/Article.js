@@ -92,6 +92,13 @@ const data = [
       firstParagraph: `This is the first paragraph.`,
       secondParagraph: `Who gave me this power?`,
       thirdParagraph: `PPPPPPPOOOOOOOOOOOOOOOOOOWWWWWWWWWWWWWWEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRR ... damn you He-Man`
+  },
+  {
+    title: 'Revolver Quotes',
+    date: 'Sep 4th, 2018',
+    firstParagraph: 'Rule 1: You only get smarter by playing a smarter opponent.',
+    secondParagraph: 'Rule 2: The more sophisticated the game, the more sophisticated the opponent.',
+    thirdParagraph: "The bigger and older the trick the easier it is to pull.  Based on 2 Principles:  They think it can't be that old.  It can't be that big for so many people to have fallen for it.  Eventually when the opponent is challenged or questioned it means the victim's investment, and thus his intelligence is questioned. No one can accept that not even to themselves.  It stops when you start to give me answers."
   }
 ];
 
